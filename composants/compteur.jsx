@@ -6,6 +6,7 @@ import stylesCompteur from "@/styles/Compteur.module.css";
 const inter = Inter({ subsets: ["latin"] });
 export default function Compteur() {
   const [count, setCount] = useState(0);
+
   function ajout1() {
     setCount(count + 1);
   }
@@ -20,6 +21,10 @@ export default function Compteur() {
   }
   function enleve2() {
     setCount(count - 2);
+  }
+  if (count < 0) {
+    setCount(0);
+    alert("Vous ne pouvez pas descendre en dessous de 0");
   }
   return (
     <>
